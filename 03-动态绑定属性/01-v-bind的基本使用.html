@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-bind指令</title>
+</head>
+<body>
+<div id="app">
+  <div>
+    <img v-bind:src="imageUrl">
+  </div>
+  <div>
+    <a :href="ahref">百度一下</a>
+  </div>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+
+  // v-bind动态绑定指令
+  const  app = new Vue({
+    el: '#app',
+    data: {
+      message: 'hello vue.js',
+      imageUrl:
+          'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1600609623606&' +
+          'di=34c15d2d703b4bbb7abc1fe208270494&imgtype=0&' +
+          'src=http%3A%2F%2Fup.deskcity.org%2Fpic_360%2F71%2Fe5%2F55%2F71e555710019cbc5f03cb7926109738f.jpg',
+      ahref: 'http://www.baidu.com',
+    }
+  })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>练习题</title>
+</head>
+<body>
+<div id="app">
+  <ul>
+    <li class="base"
+        v-for="(item, index) in movies"
+        :class="{active: currentIndex === index}"
+        @click="handleMovies(index)"
+    >
+      {{index}}-{{item}}
+    </li>
+  </ul>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  const  app = new Vue({
+    el: '#app',
+    data: {
+      message: 'hello vue.js',
+      movies: ['海贼王', '海尔兄弟', '海王','海上世界'],
+      currentIndex: 0
+    },
+    methods: {
+      handleMovies(index) {
+        console.log(index)
+        this.currentIndex = index
+      }
+    }
+  })
+</script>
+
+<style>
+  body {
+    cursor:pointer;
+  }
+
+  .base {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .active {
+    color: #42b983;
+  }
+</style>
+
+</body>
+</html>

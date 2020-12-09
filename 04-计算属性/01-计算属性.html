@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>计算属性</title>
+</head>
+<body>
+<div id="app">
+  <h2>{{firstName + ' ' + lastName}}</h2>
+  <h2>{{firstName}} {{lastName}}</h2>
+  <h2>{{fullName}}</h2>
+  <h2>书籍的总价格：{{totalPrice}}</h2>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: 'hello vue.js',
+      firstName: 'kobe',
+      lastName: 'Bryant',
+      books: [
+        {name: '代码大全', price: '109', count: 3},
+        {name: '深入理解计算机原理', price: '86', count: 3},
+        {name: '现代操作系统', price: '68', count: 2},
+        {name: 'Unix编程艺术', price: '124', count: 3},
+      ]
+    },
+    computed: {
+      fullName() {
+        return this.firstName + ' ' + this.lastName
+      },
+      totalPrice() {
+        let sumPrice = 0
+        for (let book of this.books) {
+          let prices = Number(book.price) * book.count;
+          sumPrice += prices;
+          console.log(sumPrice)
+        }
+        return sumPrice
+      }
+    }
+  })
+</script>
+</body>
+</html>

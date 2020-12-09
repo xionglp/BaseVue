@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ES6对象字面量写法</title>
+</head>
+<body>
+
+  <script>
+    let name = 'xionglp';
+    let age = 28;
+    let height = 1.88;
+
+    // ES5写法
+    let obj = {
+      name: name,
+      age: age,
+      height: height,
+    };
+    console.log(obj);
+
+    let funObj = {
+      run: function () {
+        console.log('在跑步');
+      },
+
+      eat: function () {
+        console.log('在吃东西');
+      }
+    };
+    funObj.eat();
+    funObj.run();
+
+    // ES6增强写法
+    let EsObj = {
+      name,
+      height,
+      age
+    };
+    console.log(EsObj);
+
+    let funEsObj = {
+      run() {
+        console.log('ES6在跑步');
+      },
+      eat() {
+        console.log('ES6在吃东西');
+      },
+    };
+    funEsObj.eat();
+    funEsObj.run();
+
+  </script>
+</body>
+</html>

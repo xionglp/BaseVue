@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue计数器</title>
+</head>
+<body>
+
+    <div id="app">
+        <h2>当前基数：{{count}}</h2>
+        <button @click="handleAdd">+</button>
+        <button @click="handleMinus" :disabled="isBtnDisabled">-</button>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                count: 0,
+                isBtnDisabled: true
+            },
+            methods: {
+                handleAdd () {
+                    this.count++;
+                    this.isBtnDisabled = this.count <= 0
+                },
+                handleMinus() {
+                    this.count--;
+                    this.isBtnDisabled = this.count <= 0;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-text指令</title>
+</head>
+<body>
+<div id="app">
+  <h2>{{message}}, xionglp</h2>
+  <h2 v-text="message"></h2>
+  <h2 v-text="message">xionglp</h2>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+
+  // v-text指令作用和mustache语法糖的作用一致，但是一般不使用这种方法（如果后面再跟数据， 会将数据替换了）
+  const  app = new Vue({
+    el: '#app',
+    data: {
+      message: 'hello vue.js'
+    }
+  })
+</script>
+</body>
+</html>

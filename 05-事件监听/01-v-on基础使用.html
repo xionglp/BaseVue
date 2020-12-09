@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-on</title>
+</head>
+<body>
+<div id="app">
+  <h2>{{message}}</h2>
+<!--  如果没有参数传递， 可以省略（）-->
+  <button @click="handle1Btn">按钮1</button>
+  <button @click="handle2Btn('123456')">按钮2</button>
+  <button @click="handle3Btn('abc', $event)">按钮3</button>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  const  app = new Vue({
+    el: '#app',
+    data: {
+      message: 'hello vue.js'
+    },
+    methods: {
+      handle1Btn(data) {
+        console.log(data)
+      },
+      handle2Btn(data) {
+        console.log(data)
+      },
+      handle3Btn(data, event) {
+        console.log(data);
+        console.log(event);
+      }
+
+    }
+  })
+</script>
+</body>
+</html>
