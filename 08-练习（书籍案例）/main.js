@@ -28,6 +28,13 @@ const app = new Vue({
         date: '2006-3',
         price: 128.00,
         count: 1
+      },
+      {
+        id: 5,
+        name: '《深入理解计算机原理》',
+        date: '2006-3',
+        price: 128.00,
+        count: 1
       }
     ]
   },
