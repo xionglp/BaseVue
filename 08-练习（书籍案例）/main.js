@@ -61,6 +61,9 @@ const app = new Vue({
   },
   filters: {
     // 过滤器
+
+
+    // 123
     showPrice(price) {
       return '¥' + price.toFixed(2);
     }
